@@ -112,12 +112,14 @@ npx hardhat run scripts/deployIpfsStorage.js --network localhost
 
 ---
 
-### 1.5.3. Instalar pdfkit para que el bot pueda crear el pdf para ipfs y subirlo
+#### 1.5.3. Instalar pdfkit para que el bot pueda crear el pdf para ipfs y subirlo
 
 ```bash
 npm install pdfkit chartjs-node-canvas chart.js
 ```
 > instalar lo necesario para el pdf que guardaremos en el ipfs. Solo necesario que lo hagamos una vez
+
+---
 
 #### 1.5.4. Arrancar el bot/oracle de reports
 
