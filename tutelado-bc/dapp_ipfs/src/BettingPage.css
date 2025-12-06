@@ -1,0 +1,275 @@
+.bet-app {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+  color: #e5e7eb;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.bet-header {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bet-header-left h1 {
+  margin: 0 0 0.2rem 0;
+}
+
+.bet-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.bet-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.wallet-info span {
+  color: #9ca3af;
+  margin-right: 0.25rem;
+}
+
+.wallet-info strong {
+  font-weight: 600;
+}
+
+.bet-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bet-card {
+  background-color: rgba(15, 23, 42, 0.95);
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+}
+
+.bet-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.bet-card-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.bet-caption {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* Selector de mercado */
+
+.market-selector {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.market-pill {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.market-pill-active {
+  border-color: #38bdf8;
+  background: radial-gradient(circle at top left, #38bdf8 0, #020617 55%);
+}
+
+/* Estado de ronda */
+
+.round-status {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.round-status-line {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.round-status span {
+  color: #9ca3af;
+}
+
+/* Columnas de apuestas */
+
+.bets-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.bets-column {
+  border-radius: 0.9rem;
+  padding: 0.8rem;
+  background: #020617;
+  border: 1px solid rgba(75, 85, 99, 0.9);
+}
+
+.yes-column {
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.25);
+}
+
+.no-column {
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.25);
+}
+
+.bets-column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.bets-column-header h3 {
+  margin: 0;
+}
+
+.bets-list {
+  max-height: 220px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+.bets-empty {
+  margin: 0.2rem 0 0 0;
+  color: #9ca3af;
+}
+
+.bet-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(55, 65, 81, 0.8);
+}
+
+.bet-row:last-child {
+  border-bottom: none;
+}
+
+/* Controles de apuesta */
+
+.bet-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.bet-amount label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.bet-amount input {
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.6rem;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  min-width: 120px;
+}
+
+.bet-hint {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.bet-buttons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.btn-yes,
+.btn-no {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-yes {
+  background: rgba(34, 197, 94, 0.2);
+  color: #bbf7d0;
+  border: 1px solid rgba(34, 197, 94, 0.7);
+}
+
+.btn-no {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fecaca;
+  border: 1px solid rgba(239, 68, 68, 0.7);
+}
+
+.btn-yes:hover {
+  background: rgba(34, 197, 94, 0.35);
+}
+
+.btn-no:hover {
+  background: rgba(239, 68, 68, 0.35);
+}
+
+.tx-status {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .bet-app {
+    padding: 1rem;
+  }
+
+  .bet-header {
+    flex-direction: column;
+  }
+
+  .bets-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .bet-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bet-buttons {
+    justify-content: space-between;
+  }
+}

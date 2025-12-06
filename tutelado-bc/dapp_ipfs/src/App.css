@@ -1,0 +1,428 @@
+.App {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+  color: #e5e7eb;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.app-header {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.app-header-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.app-logo {
+  width: 64px;
+  height: 64px;
+}
+
+.app-subtitle {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+.app-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.card-caption {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.error {
+  color: #fecaca;
+  font-size: 0.9rem;
+}
+
+/* Strip horizontal de rondas */
+
+.rounds-strip {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.rounds-strip::-webkit-scrollbar {
+  height: 6px;
+}
+
+.rounds-strip::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 999px;
+}
+
+.rounds-strip::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.round-card {
+  min-width: 210px;
+  max-width: 210px;
+  text-align: left;
+  background: #020617;
+  border-radius: 0.9rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(75, 85, 99, 0.7);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    border-color 0.12s ease;
+  color: inherit;
+}
+
+.round-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.9);
+  border-color: #e5e7eb;
+}
+
+.round-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.round-id {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.round-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.round-card-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.round-card-row span {
+  color: #9ca3af;
+}
+
+.round-card-row strong {
+  font-weight: 600;
+}
+
+.round-card-cid {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Badges */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-yes {
+  background-color: rgba(34, 197, 94, 0.16);
+  color: #bbf7d0;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+.badge-no {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #fecaca;
+  border: 1px solid rgba(239, 68, 68, 0.5);
+}
+
+.badge-refund {
+  background-color: rgba(245, 158, 11, 0.18);
+  color: #fed7aa;
+  border: 1px solid rgba(245, 158, 11, 0.6);
+}
+
+/* Buscador de ronda */
+
+.round-search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.round-search label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.round-search input {
+  margin-top: 0.25rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.45rem;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  min-width: 110px;
+}
+
+.round-search input:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+/* Botones */
+
+.btn-primary {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 30px rgba(37, 99, 235, 0.45);
+}
+
+.btn-secondary {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-link {
+  font-size: 0.8rem;
+  color: #38bdf8;
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+/* Detalle de ronda */
+
+.round-detail-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.round-detail-header h3 {
+  margin: 0 0 0.3rem 0;
+}
+
+.round-detail-market {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.round-detail-outcome {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.85rem;
+}
+
+.round-detail-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.round-detail-meta span {
+  color: #9ca3af;
+}
+
+.round-detail-meta strong {
+  display: block;
+}
+
+/* Grid de tarjetas de detalle */
+
+.round-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.round-detail-card {
+  background: #020617;
+  border-radius: 0.8rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(75, 85, 99, 0.7);
+  font-size: 0.8rem;
+}
+
+.round-detail-card h4 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.detail-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.detail-list span {
+  color: #9ca3af;
+}
+
+.totals-card strong {
+  font-weight: 600;
+}
+
+/* Tabla de apuestas */
+
+.round-bets-card {
+  background: #020617;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(75, 85, 99, 0.7);
+  padding: 0.7rem 0.8rem 0.9rem 0.8rem;
+}
+
+.round-bets-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.bets-table-wrapper {
+  overflow-x: auto;
+}
+
+.bets-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.bets-table th,
+.bets-table td {
+  padding: 0.35rem 0.45rem;
+  border-bottom: 1px solid rgba(55, 65, 81, 0.8);
+  text-align: left;
+}
+
+.bets-table th {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.bets-table tr:last-child td {
+  border-bottom: none;
+}
+
+.tx-hash-cell a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.tx-hash-cell a:hover {
+  text-decoration: underline;
+}
+
+/* JSON bruto */
+
+.json-toggle {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.json-viewer {
+  margin-top: 0.6rem;
+  max-height: 280px;
+  overflow: auto;
+  padding: 0.6rem 0.7rem;
+  background: #020617;
+  border-radius: 0.7rem;
+  border: 1px solid #4b5563;
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .App {
+    padding: 1rem;
+  }
+
+  .app-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .round-detail-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

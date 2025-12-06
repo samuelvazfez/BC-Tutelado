@@ -1,0 +1,175 @@
+
+Š)‚){
+  "roundId": "2",
+  "oracleAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "betHouseAddress": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  "collateralAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "startTime": 1763480088,
+  "endTime": 1763480188,
+  "resolvedAt": 1763480198,
+  "roundSeconds": 100,
+  "betWindowSeconds": 60,
+  "btcPriceStart": 92703,
+  "btcPriceEnd": 92741,
+  "outcomeYes": true,
+  "refundMode": false,
+  "totals": {
+    "totalYesNet": "98.0",
+    "totalNoNet": "88.2",
+    "feeAccrued": "3.8"
+  },
+  "bets": [
+    {
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0xd6731b66660de3763b7a10c45047b593e0aed50eac7dfc2b6b2d9cbc5ad6f4be",
+      "winner": true
+    },
+    {
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0xc186f45feb8a2885f3f6470bb85fa0627c4f3a626e77e7e574a3785c2a6c027b",
+      "winner": true
+    },
+    {
+      "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x212b46605a8d06667d6a8c51fea048dfe69c5b82c9b270eaa3f0f809b82fd36f",
+      "winner": true
+    },
+    {
+      "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
+      "side": "NO",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x6a079fc48556f3e715fb7dbde29fc326d9eb1ea1c8c65db163288757d3984272",
+      "winner": false
+    },
+    {
+      "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
+      "side": "NO",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x8dbae6be8846cce29021f80fc690dfeb7f56e6e489c982ab01f8ec20ffe26d3d",
+      "winner": false
+    },
+    {
+      "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
+      "side": "NO",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0xdee1bc8b08cc285a0d7c9f607ab4ee442bffc6e931e45d2978ac11653086a976",
+      "winner": false
+    },
+    {
+      "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x17ec256205ffb22dda7ee756b803ceb978e4b2f6964cde164d2bceec33fdcce7",
+      "winner": true
+    },
+    {
+      "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x4c4e666f80f70cbc41f7beb9d3a233fdd2a3360cc8a24c29fb59a502b3158b27",
+      "winner": true
+    },
+    {
+      "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0xad60ecef03f3e2b9edf3ea43f7e7626de7a872b4e83a02a2257db62bdeb6ef27",
+      "winner": true
+    },
+    {
+      "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
+      "side": "NO",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x2a15d66dbdab83ab7fe9dbfd91422e08024dae1ee6224faac7b2230029bf3566",
+      "winner": false
+    },
+    {
+      "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
+      "side": "NO",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x369cffa5017171969c3bc7211760b0196ecdc270397ad94e0baf1610dd3015e9",
+      "winner": false
+    },
+    {
+      "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
+      "side": "NO",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0xabd183d7031125b49858a59050d0d6dc56190d178fd9d73808a69ee40fc8c6c6",
+      "winner": false
+    },
+    {
+      "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0xcfc5690235a3e6d88a32bea4c0c880b00acb8c7b96733ee6d80fc4298aff0f10",
+      "winner": true
+    },
+    {
+      "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0xadf45449d6b52ccadc8ccacddaf2948f7768cdf62bf74d4bb7dd0ae3218ed316",
+      "winner": true
+    },
+    {
+      "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x54946f8fac22e3741768a22b4bcc949dfbb3d8cebbf30ed6b096f9d00e072bd0",
+      "winner": true
+    },
+    {
+      "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
+      "side": "NO",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x4f8391beca83cc58b214b2e4cc44cda99613d3410cb40fca65005bf9bd60f2f3",
+      "winner": false
+    },
+    {
+      "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
+      "side": "NO",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x03f23b8cf24c13035b912bd340ed6e3f9a053488f9c2fb040b76d39fe2db84bb",
+      "winner": false
+    },
+    {
+      "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "side": "NO",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x14ef93e2abd5b774ca66a269141c08002fbf067e4ae3e8d24b651b30d2c4a42d",
+      "winner": false
+    },
+    {
+      "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
+      "side": "YES",
+      "gross": "10.0",
+      "net": "9.8",
+      "txHash": "0x7fafc3c5c87eb6b750a07b191030c2697bcb245a4667da3849602099ac7d6c2f",
+      "winner": true
+    }
+  ]
+}‚)
