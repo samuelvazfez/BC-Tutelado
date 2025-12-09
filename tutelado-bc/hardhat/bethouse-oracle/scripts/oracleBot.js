@@ -1,7 +1,4 @@
 // scripts/oracleBot.js
-// Simulador local: actualiza MockV3Aggregator, genera reportes JSON,
-// los sube a IPFS y guarda CIDs en IpfsRoundStorage, copiando a MFS
-// para verlos en /round-reports en la WebUI.
 
 const hre = require("hardhat");
 const { ethers } = hre;
@@ -60,7 +57,7 @@ async function getChainTime() {
   return Number(block.timestamp);
 }
 
-// ===== simulación de precio USD (para MockV3Aggregator) =====
+// ===== simulación de precio USD =====
 
 let simulatedPriceUsd = 50_000;
 
@@ -71,7 +68,7 @@ function nextSimulatedPriceUsd() {
   return simulatedPriceUsd;
 }
 
-// ===== heartbeat: mover la blockchain con MCK =====
+// ===== mover la blockchain con MCK =====
 
 async function heartbeatTx(players, collateral) {
   const fromIndex = Math.floor(Math.random() * players.length);
@@ -97,7 +94,7 @@ async function heartbeatTx(players, collateral) {
 }
 
 // ======================================================
-//  Lógica de UNA ronda + generación de reporte JSON
+//  Lógica de ronda + generación de reporte JSON
 // ======================================================
 
 // Genera un PDF de recibo de ronda a partir del reporte
@@ -618,7 +615,7 @@ async function main() {
     storageAddress
   );
 
-  // Recuperar el feed del mercado BTC/USD desde el contrato (multi-mercado)
+  // Recuperar el feed del mercado
   const MARKET_BTC_USD = ethers.id("BTC/USD");
   const marketInfo = await betHouse.getMarket(MARKET_BTC_USD);
   const feedAddress = marketInfo[0];
@@ -634,7 +631,7 @@ async function main() {
 
   const ipfsClient = await getKuboClient();
 
-  console.log("\n=== CONFIG ORACLE+IPFS+STORAGE (LOCAL) ===");
+  console.log("\n=== CONFIG ORACLE+IPFS+STORAGE ===");
   console.log("Owner (oracle)   :", owner.address);
   console.log("BetHouse         :", await betHouse.getAddress());
   console.log("Collateral       :", await collateral.getAddress());

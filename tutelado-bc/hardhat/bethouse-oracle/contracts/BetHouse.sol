@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
-/// @notice Interfaz mínima compatible con Chainlink AggregatorV3
+/// @notice Interfaz compatible con Chainlink
 interface AggregatorV3Interface {
     function latestRoundData()
         external
@@ -20,7 +20,7 @@ interface AggregatorV3Interface {
         );
 }
 
-/// @notice Interfaz mínima compatible con Chainlink Automation
+/// @notice Interfaz compatible con Chainlink Automation
 interface AutomationCompatibleInterface {
     function checkUpkeep(bytes calldata checkData)
         external
@@ -29,8 +29,7 @@ interface AutomationCompatibleInterface {
     function performUpkeep(bytes calldata performData) external;
 }
 
-/// @title BetHouse multi-mercado (versión Hardhat)
-/// @notice Casa de apuestas con collateral ERC20, data feeds tipo Chainlink y soporte multi-mercado.
+/// @title BetHouse multi-mercado
 contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
     using SafeERC20 for IERC20;
 
@@ -41,7 +40,7 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
     uint64 public constant BET_WINDOW_SECONDS = 60;  // ventana de apuestas
 
     // ──────────────────────────────────────────────────────────
-    // Mercados (BTC/USD, ETH/USD, etc.)
+    // Mercados
     // ──────────────────────────────────────────────────────────
 
     struct MarketConfig {
@@ -71,7 +70,7 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
         int256  priceEnd;     // precio al cierre (feed)
     }
 
-    /// @notice Apuesta agregada por usuario y lado (YES/NO)
+    /// @notice Apuesta agregada por usuario y lado
     struct BetInfo {
         uint256 gross; // total apostado bruto
         uint256 net;   // total neto tras fee
@@ -154,7 +153,6 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
     // Gestión de mercados (multi-asset)
     // ──────────────────────────────────────────────────────────
 
-    /// @notice Añade/registrar un mercado (ej. "BTC/USD") con su feed.
     function addMarket(bytes32 id, address feed) external onlyOwner {
         require(feed != address(0), "zero feed");
         markets[id] = MarketConfig({
@@ -164,7 +162,6 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
         emit MarketAdded(id, feed);
     }
 
-    /// @notice Activa o desactiva un mercado ya existente.
     function setMarketEnabled(bytes32 id, bool enabled) external onlyOwner {
         MarketConfig storage m = markets[id];
         if (address(m.feed) == address(0)) revert ErrBadMarket();
@@ -202,7 +199,7 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
     // Gestión de rondas
     // ──────────────────────────────────────────────────────────
 
-    /// @notice Inicia una nueva ronda para un mercado concreto (BTC/USD, ETH/USD…)
+    /// @notice Inicia una nueva ronda para un mercado concreto
     function startRound(bytes32 marketId) external onlyOwner {
         MarketConfig storage m = markets[marketId];
         if (!m.enabled || address(m.feed) == address(0)) revert ErrBadMarket();
@@ -244,7 +241,6 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
     }
 
     /// @notice Cierra una ronda leyendo el precio final del feed del mercado asociado.
-    /// @dev Es permissionless: puede llamarse por Automation, owner u otros.
     function endRound(uint256 id) public {
         if (id == 0 || id > currentRoundId) revert ErrBadRound();
         Round storage r = rounds[id];
@@ -338,7 +334,7 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
     }
 
     // ──────────────────────────────────────────────────────────
-    // Claim pro-rata ganadores
+    // Claim ganadores
     // ──────────────────────────────────────────────────────────
 
     function claim(uint256 id) external nonReentrant {
@@ -369,7 +365,7 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
     }
 
     // ──────────────────────────────────────────────────────────
-    // Refund íntegro (modo refund + empates)
+    // Refund íntegro
     // ──────────────────────────────────────────────────────────
 
     function refund(uint256 id) external nonReentrant {
@@ -414,10 +410,9 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
     }
 
     // ──────────────────────────────────────────────────────────
-    // Chainlink Automation-like (Upkeep)
+    // Chainlink Automation
     // ──────────────────────────────────────────────────────────
 
-    /// @notice checkUpkeep: en Hardhat la llamarás tú desde tests/scripts.
     function checkUpkeep(
         bytes calldata /* checkData */
     ) external override returns (bool upkeepNeeded, bytes memory performData) {
@@ -446,7 +441,7 @@ contract BetHouse is Ownable, ReentrancyGuard, AutomationCompatibleInterface {
         }
     }
 
-    /// @notice performUpkeep: simplemente llama a endRound(id).
+    /// @notice performUpkeep: llama a endRound(id).
     function performUpkeep(bytes calldata performData) external override {
         uint256 id = abi.decode(performData, (uint256));
         endRound(id);
