@@ -22,7 +22,6 @@ contract IpfsRoundStorage is Ownable {
     constructor(address initialOwner) Ownable(initialOwner) {}
 
     /// @notice Registra / actualiza el CID del JSON de una ronda
-    /// @dev En la práctica, lo usará el bot-oráculo (owner)
     function setRoundReport(uint256 roundId, string calldata cid) external onlyOwner {
         require(bytes(cid).length > 0, "empty cid");
         roundReports[roundId] = cid;
