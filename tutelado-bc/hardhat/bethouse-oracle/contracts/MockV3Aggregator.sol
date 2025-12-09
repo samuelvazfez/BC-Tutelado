@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-/// @notice Mock muy simple compatible con AggregatorV3Interface.
+/// @notice Mock compatible con AggregatorV3Interface.
 contract MockV3Aggregator {
     uint8 public decimals;
     int256 private _answer;
